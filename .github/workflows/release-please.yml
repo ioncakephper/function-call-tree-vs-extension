@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v4
         with:
-          token: ${{ secrets.JS_STARTER_PAT }} # Use a PAT to allow triggering other workflows
+          token: ${{ secrets.FUNCTION_TREE }} # Use a PAT to allow triggering other workflows
           release-type: node
           package-name: js-starter
           pull-request-title-pattern: "chore(release): ${version}"

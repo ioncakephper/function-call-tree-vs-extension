@@ -1,6 +1,10 @@
 const vscode = require('vscode');
 const CallTreeProvider = require('./callTreeProvider');
 
+/**
+ *
+ * @param context
+ */
 function activate(context) {
   const provider = new CallTreeProvider();
 
@@ -22,7 +26,9 @@ function activate(context) {
   context.subscriptions.push(toggleDirectionCommand);
 }
 
-
+/**
+ *
+ */
 function deactivate() {}
 
 module.exports = {

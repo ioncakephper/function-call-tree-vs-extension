@@ -2,10 +2,9 @@
 
 ## 1.0.0 (2025-07-29)
 
-
 ### Features
 
-* convert to VS Code extension ([e6f6505](https://github.com/ioncakephper/function-call-tree-vs-extension/commit/e6f6505c88f834063b8cbaa2ca7b9a3a91aedfce))
+- convert to VS Code extension ([e6f6505](https://github.com/ioncakephper/function-call-tree-vs-extension/commit/e6f6505c88f834063b8cbaa2ca7b9a3a91aedfce))
 
 ## Changelog
 

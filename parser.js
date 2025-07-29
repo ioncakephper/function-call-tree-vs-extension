@@ -4,6 +4,10 @@ const babelParser = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
 const vscode = require('vscode');
 
+/**
+ *
+ * @param scope
+ */
 async function parseProject(scope) {
   const functions = new Map();
   const files =
@@ -41,12 +45,21 @@ async function parseProject(scope) {
 
   return { functions };
 
+  /**
+   *
+   * @param name
+   */
   function registerFunction(name) {
     if (!functions.has(name)) {
       functions.set(name, { callers: new Set(), callees: new Set() });
     }
   }
 
+  /**
+   *
+   * @param caller
+   * @param callee
+   */
   function link(caller, callee) {
     const c = functions.get(caller);
     const d = functions.get(callee);

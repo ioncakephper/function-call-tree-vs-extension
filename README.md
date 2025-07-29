@@ -169,27 +169,29 @@ For more details, refer to the [release-please documentation](https://github.com
 
 ```plaintext
 .
-├── .github/           # GitHub Actions workflows
+├── .github/            # GitHub Actions workflows
 │   └── workflows/
 │       ├── ci.yml             # Continuous Integration (CI) workflow
 │       ├── publish.yml
 │       └── release-please.yml
 ├── .qodo/
 
-├── .eslintignore      # Files/folders for ESLint to ignore
-├── .eslintrc.json     # ESLint configuration
-├── .gitignore         # Files/folders for Git to ignore
+├── .eslintignore       # Files/folders for ESLint to ignore
+├── .eslintrc.json      # ESLint configuration
+├── .gitignore          # Files/folders for Git to ignore
 ├── .npmrc
-├── .prettierignore    # Files/folders for Prettier to ignore
-├── .prettierrc.json   # Prettier configuration
+├── .prettierignore     # Files/folders for Prettier to ignore
+├── .prettierrc.json    # Prettier configuration
+├── callTreeProvider.js
 ├── CHANGELOG.md
-├── CODE_OF_CONDUCT.md # Community standards
-├── CONTRIBUTING.md    # Guidelines for contributors
+├── CODE_OF_CONDUCT.md  # Community standards
+├── CONTRIBUTING.md     # Guidelines for contributors
 ├── extension.js
 ├── jest.config.mjs
-├── LICENSE            # Project license
-├── package.json       # Project metadata and dependencies
-└── README.md          # This file
+├── LICENSE             # Project license
+├── package.json        # Project metadata and dependencies
+├── parser.js
+└── README.md           # This file
 ```
 
 <!-- END PROJECT STRUCTURE -->

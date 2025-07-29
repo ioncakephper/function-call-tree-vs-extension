@@ -1,6 +1,6 @@
 {
   "name": "function-call-tree-vs-extension",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A robust starter template for modern Node.js development, pre-configured with Jest for testing, ESLint for linting, and Prettier for code formatting.",
   "main": "./extension.js",
   "scripts": {

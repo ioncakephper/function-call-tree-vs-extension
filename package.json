@@ -2,7 +2,7 @@
   "name": "function-call-tree-vs-extension",
   "version": "0.1.0",
   "description": "A robust starter template for modern Node.js development, pre-configured with Jest for testing, ESLint for linting, and Prettier for code formatting.",
-  "main": "src/index.js",
+  "main": "./extension.js",
   "scripts": {
     "start": "node src/index.js",
     "test": "jest",
@@ -58,7 +58,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ioncakephper/js-starter.git"
+    "url": "git+https://github.com/ioncakephper/function-call-tree-vs-extension.git"
   },
   "keywords": [
     "javascript",
@@ -68,9 +68,9 @@
   "author": "Ion Gireada (https://github.com/ioncakephper)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ioncakephper/js-starter/issues"
+    "url": "https://github.com/ioncakephper/function-call-tree-vs-extension/issues"
   },
-  "homepage": "https://github.com/ioncakephper/js-starter#readme",
+  "homepage": "https://github.com/ioncakephper/function-call-tree-vs-extension#readme",
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",

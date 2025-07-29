@@ -2,45 +2,39 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md) [![Build Status](https://github.com/ioncakephper/function-call-tree-vs-extension/actions/workflows/ci.yml/badge.svg)](https://github.com/ioncakephper/function-call-tree-vs-extension/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/ioncakephper/function-call-tree-vs-extension/branch/main/graph/badge.svg)](https://codecov.io/gh/ioncakephper/function-call-tree-vs-extension) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Changelog](https://img.shields.io/badge/changelog-keep_a_changelog-blue.svg)](CHANGELOG.md)
 
-A robust starter template for modern Node.js development, pre-configured with Jest for testing, ESLint for linting, and Prettier for code formatting.
-
-This project provides a solid foundation for building high-quality JavaScript applications, ensuring code consistency and best practices from the start.
+Function Call Tree VSC Extension is a Visual Studio Code extension that helps developers visualize and explore function call hierarchies within their codebase. It provides an interactive tree view of function calls, making it easier to understand, navigate, and refactor complex code structures. The extension supports modern JavaScript, TypeScript and Node.js projects, and comes pre-configured with robust tooling for testing, linting, formatting, and automated documentation.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## 📚 Table of Contents
 
-- [Function Call Tree VSC Extension](#function-call-tree-vsc-extension)
-  - [📚 Table of Contents](#-table-of-contents)
-  - [✨ Key Features](#-key-features)
-  - [🚀 Getting Started](#-getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Using this Template](#using-this-template)
-      - [Method 1: GitHub Template (Recommended)](#method-1-github-template-recommended)
-      - [Method 2: Using `degit` (for a local copy)](#method-2-using-degit-for-a-local-copy)
-  - [🚀 Available Scripts](#-available-scripts)
-    - [Automated Documentation](#automated-documentation)
-    - [Code Quality \& Formatting](#code-quality--formatting)
-    - [Core Development](#core-development)
-    - [The "One-Click" Pre-Commit Workflow](#the-one-click-pre-commit-workflow)
-  - [A Focus on Quality and Productivity](#a-focus-on-quality-and-productivity)
-    - [The Cost of Stale Documentation](#the-cost-of-stale-documentation)
-    - [The Power of Workflow Scripts](#the-power-of-workflow-scripts)
-  - [📦 Release \& Versioning](#-release--versioning)
-    - [How it Works](#how-it-works)
-    - [Creating a New Release](#creating-a-new-release)
-      - [Your First Release](#your-first-release)
-  - [📁 Project Structure](#-project-structure)
-  - [✍️ Linting for Documentation](#️-linting-for-documentation)
-    - [How to Check for Missing Documentation](#how-to-check-for-missing-documentation)
-    - [Example](#example)
-  - [🤝 Contributing](#-contributing)
-  - [🗺️ Roadmap](#️-roadmap)
-  - [⚖️ Code of Conduct](#️-code-of-conduct)
-  - [🙏 Acknowledgements](#-acknowledgements)
-  - [👨‍💻 About the Author](#-about-the-author)
-  - [📄 License](#-license)
+- [✨ Key Features](#-key-features)
+- [🚀 Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+- [Cloning and Using this Repository](#cloning-and-using-this-repository)
+- [🚀 Available Scripts](#-available-scripts)
+  - [Automated Documentation](#automated-documentation)
+  - [Code Quality & Formatting](#code-quality--formatting)
+  - [Core Development](#core-development)
+  - [The "One-Click" Pre-Commit Workflow](#the-one-click-pre-commit-workflow)
+- [A Focus on Quality and Productivity](#a-focus-on-quality-and-productivity)
+  - [The Cost of Stale Documentation](#the-cost-of-stale-documentation)
+  - [The Power of Workflow Scripts](#the-power-of-workflow-scripts)
+- [📦 Release & Versioning](#-release--versioning)
+  - [How it Works](#how-it-works)
+  - [Creating a New Release](#creating-a-new-release)
+    - [Your First Release](#your-first-release)
+- [📁 Project Structure](#-project-structure)
+- [✍️ Linting for Documentation](#-linting-for-documentation)
+  - [How to Check for Missing Documentation](#how-to-check-for-missing-documentation)
+  - [Example](#example)
+- [🤝 Contributing](#-contributing)
+- [🗺️ Roadmap](#-roadmap)
+- [⚖️ Code of Conduct](#-code-of-conduct)
+- [🙏 Acknowledgements](#-acknowledgements)
+- [👨‍💻 About the Author](#-about-the-author)
+- [📄 License](#-license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -61,42 +55,24 @@ This project provides a solid foundation for building high-quality JavaScript ap
 
 - Node.js version 18.0.0 or higher
 
-### Using this Template
+## Cloning and Using this Repository
 
-There are two recommended ways to use this template to start your project.
+To clone this repository and use it locally, follow these steps:
 
-#### Method 1: GitHub Template (Recommended)
-
-This is the best approach for creating a new repository on GitHub that is linked to this template.
-
-1.  Click the green **"Use this template"** button on the [main repository page](https://github.com/ioncakephper/function-call-tree-vs-extension).
-2.  Select **"Create a new repository"**.
-3.  Give your new repository a name and description, then create it.
-4.  Clone your newly created repository to your local machine, replacing `YOUR_USERNAME` and `YOUR_REPOSITORY_NAME`:
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
-    ```
-5.  Navigate into the project directory and install the dependencies:
-    ```bash
-    cd YOUR_REPOSITORY_NAME
-    npm install
-    ```
-6.  You're all set! Start building your application in the `src` directory.
-
-#### Method 2: Using `degit` (for a local copy)
-
-If you want a clean copy of the template files on your local machine without the full Git history, you can use `degit`.
-
-1.  Run the following command in your terminal, replacing `my-new-project` with your desired folder name:
-    ```bash
-    npx degit ioncakephper/function-call-tree-vs-extension my-new-project
-    ```
-2.  Navigate into your new project directory and install the dependencies:
-    ```bash
-    cd my-new-project
-    npm install
-    ```
-3.  You're all set! You can now initialize a new Git repository (`git init`) and start building.
+1. Open your terminal and navigate to the directory where you want to place the project.
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/ioncakephper/function-call-tree-vs-extension.git
+   ```
+3. Navigate into the project directory:
+   ```bash
+   cd function-call-tree-vs-extension
+   ```
+4. Install the dependencies:
+   ```bash
+   npm install
+   ```
+5. Start building your application in the `src` directory or use the available scripts as described below.
 
 ## 🚀 Available Scripts
 
@@ -198,10 +174,8 @@ For more details, refer to the [release-please documentation](https://github.com
 │       ├── ci.yml             # Continuous Integration (CI) workflow
 │       ├── publish.yml
 │       └── release-please.yml
-├── src/               # Source code
-│   └── index.js # Main application entry point
-├── tests/
-│   └── index.test.js
+├── .qodo/
+
 ├── .eslintignore      # Files/folders for ESLint to ignore
 ├── .eslintrc.json     # ESLint configuration
 ├── .gitignore         # Files/folders for Git to ignore
@@ -211,6 +185,7 @@ For more details, refer to the [release-please documentation](https://github.com
 ├── CHANGELOG.md
 ├── CODE_OF_CONDUCT.md # Community standards
 ├── CONTRIBUTING.md    # Guidelines for contributors
+├── extension.js
 ├── jest.config.mjs
 ├── LICENSE            # Project license
 ├── package.json       # Project metadata and dependencies

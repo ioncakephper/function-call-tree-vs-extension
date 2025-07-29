@@ -1,4 +1,4 @@
-# Contributing to JS Starter Template
+# Contributing to Functions Call Tree VSC Extension
 
 ## Code of Conduct
 

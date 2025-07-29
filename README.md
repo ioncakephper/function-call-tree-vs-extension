@@ -1,6 +1,6 @@
-# JS Starter Template
+# Function Call Tree VSC Extension
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md) [![Build Status](https://github.com/ioncakephper/js-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/ioncakephper/js-starter/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/ioncakephper/js-starter/branch/main/graph/badge.svg)](https://codecov.io/gh/ioncakephper/js-starter) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Changelog](https://img.shields.io/badge/changelog-keep_a_changelog-blue.svg)](CHANGELOG.md)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md) [![Build Status](https://github.com/ioncakephper/function-call-tree-vs-extension/actions/workflows/ci.yml/badge.svg)](https://github.com/ioncakephper/function-call-tree-vs-extension/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/ioncakephper/function-call-tree-vs-extension/branch/main/graph/badge.svg)](https://codecov.io/gh/ioncakephper/function-call-tree-vs-extension) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Changelog](https://img.shields.io/badge/changelog-keep_a_changelog-blue.svg)](CHANGELOG.md)
 
 A robust starter template for modern Node.js development, pre-configured with Jest for testing, ESLint for linting, and Prettier for code formatting.
 
@@ -11,34 +11,36 @@ This project provides a solid foundation for building high-quality JavaScript ap
 
 ## 📚 Table of Contents
 
-- [✨ Key Features](#-key-features)
-- [🚀 Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Using this Template](#using-this-template)
-    - [Method 1: GitHub Template (Recommended)](#method-1-github-template-recommended)
-    - [Method 2: Using `degit` (for a local copy)](#method-2-using-degit-for-a-local-copy)
-- [🚀 Available Scripts](#-available-scripts)
-  - [Automated Documentation](#automated-documentation)
-  - [Code Quality & Formatting](#code-quality--formatting)
-  - [Core Development](#core-development)
-  - [The "One-Click" Pre-Commit Workflow](#the-one-click-pre-commit-workflow)
-- [A Focus on Quality and Productivity](#a-focus-on-quality-and-productivity)
-  - [The Cost of Stale Documentation](#the-cost-of-stale-documentation)
-  - [The Power of Workflow Scripts](#the-power-of-workflow-scripts)
-- [📦 Release & Versioning](#-release--versioning)
-  - [How it Works](#how-it-works)
-  - [Creating a New Release](#creating-a-new-release)
-    - [Your First Release](#your-first-release)
-- [📁 Project Structure](#-project-structure)
-- [✍️ Linting for Documentation](#-linting-for-documentation)
-  - [How to Check for Missing Documentation](#how-to-check-for-missing-documentation)
-  - [Example](#example)
-- [🤝 Contributing](#-contributing)
-- [🗺️ Roadmap](#-roadmap)
-- [⚖️ Code of Conduct](#-code-of-conduct)
-- [🙏 Acknowledgements](#-acknowledgements)
-- [👨‍💻 About the Author](#-about-the-author)
-- [📄 License](#-license)
+- [Function Call Tree VSC Extension](#function-call-tree-vsc-extension)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [✨ Key Features](#-key-features)
+  - [🚀 Getting Started](#-getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Using this Template](#using-this-template)
+      - [Method 1: GitHub Template (Recommended)](#method-1-github-template-recommended)
+      - [Method 2: Using `degit` (for a local copy)](#method-2-using-degit-for-a-local-copy)
+  - [🚀 Available Scripts](#-available-scripts)
+    - [Automated Documentation](#automated-documentation)
+    - [Code Quality \& Formatting](#code-quality--formatting)
+    - [Core Development](#core-development)
+    - [The "One-Click" Pre-Commit Workflow](#the-one-click-pre-commit-workflow)
+  - [A Focus on Quality and Productivity](#a-focus-on-quality-and-productivity)
+    - [The Cost of Stale Documentation](#the-cost-of-stale-documentation)
+    - [The Power of Workflow Scripts](#the-power-of-workflow-scripts)
+  - [📦 Release \& Versioning](#-release--versioning)
+    - [How it Works](#how-it-works)
+    - [Creating a New Release](#creating-a-new-release)
+      - [Your First Release](#your-first-release)
+  - [📁 Project Structure](#-project-structure)
+  - [✍️ Linting for Documentation](#️-linting-for-documentation)
+    - [How to Check for Missing Documentation](#how-to-check-for-missing-documentation)
+    - [Example](#example)
+  - [🤝 Contributing](#-contributing)
+  - [🗺️ Roadmap](#️-roadmap)
+  - [⚖️ Code of Conduct](#️-code-of-conduct)
+  - [🙏 Acknowledgements](#-acknowledgements)
+  - [👨‍💻 About the Author](#-about-the-author)
+  - [📄 License](#-license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -67,7 +69,7 @@ There are two recommended ways to use this template to start your project.
 
 This is the best approach for creating a new repository on GitHub that is linked to this template.
 
-1.  Click the green **"Use this template"** button on the [main repository page](https://github.com/ioncakephper/js-starter).
+1.  Click the green **"Use this template"** button on the [main repository page](https://github.com/ioncakephper/function-call-tree-vs-extension).
 2.  Select **"Create a new repository"**.
 3.  Give your new repository a name and description, then create it.
 4.  Clone your newly created repository to your local machine, replacing `YOUR_USERNAME` and `YOUR_REPOSITORY_NAME`:
@@ -87,7 +89,7 @@ If you want a clean copy of the template files on your local machine without the
 
 1.  Run the following command in your terminal, replacing `my-new-project` with your desired folder name:
     ```bash
-    npx degit ioncakephper/js-starter my-new-project
+    npx degit ioncakephper/function-call-tree-vs-extension my-new-project
     ```
 2.  Navigate into your new project directory and install the dependencies:
     ```bash
@@ -138,7 +140,7 @@ This starter template is more than just a collection of files; it's a workflow d
 
 In many projects, the `README.md` quickly becomes outdated. Manually updating the project structure or list of scripts is an easily forgotten chore.
 
-`js-starter` solves this problem with its custom documentation scripts:
+`function-call-tree-vs-extension` solves this problem with its custom documentation scripts:
 
 - `scripts/update-readme-structure.js`: Saves you from manually drawing out file trees. What might take 5-10 minutes of careful, manual work (and is often forgotten) is now an instant, accurate, and repeatable command.
 - `scripts/update-readme-scripts.js`: Ensures that your project's capabilities are always documented. It reads directly from `package.json`, so the documentation can't lie. It even reminds you to describe your scripts, promoting good habits.
@@ -151,7 +153,7 @@ Chaining commands together is a simple but powerful concept. The `fix`, `docs:al
 - Instead of running three separate documentation commands, you just run `npm run docs:all`.
 - And most importantly, before you commit, you run `npm run ready`. This single command is your pre-flight check. It guarantees that every commit you push is not only functional but also perfectly formatted, linted, and documented. This discipline saves countless hours in code review and prevents messy commit histories.
 
-By embracing this automation, `js-starter` helps you build better software, faster.
+By embracing this automation, `function-call-tree-vs-extension` helps you build better software, faster.
 
 ## 📦 Release & Versioning
 

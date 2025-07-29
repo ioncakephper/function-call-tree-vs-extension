@@ -1,26 +1,5 @@
 # Changelog
 
-## [1.2.0](https://github.com/ioncakephper/js-starter/compare/v1.1.0...v1.2.0) (2025-07-07)
-
-### Features
-
-- :zap: update README, release-please.yml ([9eb09b2](https://github.com/ioncakephper/js-starter/commit/9eb09b2d1a151d075a1f75eec615e0e25b2f9997))
-
-### Bug Fixes
-
-- remove docs:links related file, update 7 files and delete 2 files ([2869905](https://github.com/ioncakephper/js-starter/commit/286990585a28b1fa3963e515397c7c5616612d5c))
-- update README.md, removed docs:links ([4efcdc4](https://github.com/ioncakephper/js-starter/commit/4efcdc4c6962f20c189aabca86cc3d36053013dd))
-
-## [1.1.0](https://github.com/ioncakephper/js-starter/compare/v1.0.3...v1.1.0) (2025-07-07)
-
-### Features
-
-- update README.md and src/index.js ([0d57d58](https://github.com/ioncakephper/js-starter/commit/0d57d589ff929dfdd5fad06c6b709d81f613e205))
-
-### Bug Fixes
-
-- :zap: create better documentation ([b83f628](https://github.com/ioncakephper/js-starter/commit/b83f628b930d9c4f27420ed35df45d334d76912f))
-
 ## Changelog
 
 All notable changes to this project will be documented in this file.

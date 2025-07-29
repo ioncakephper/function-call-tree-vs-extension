@@ -1,9 +1,7 @@
 const vscode = require('vscode');
 
-const TREE_DIRECTION = 'bottom-up'; // or 'top-down'
-
 class TreeNode extends vscode.TreeItem {
-  constructor(label, children = []) {
+  constructor(label, children = [], type = 'function') {
     super(
       label,
       children.length
@@ -11,6 +9,11 @@ class TreeNode extends vscode.TreeItem {
         : vscode.TreeItemCollapsibleState.None,
     );
     this.children = children;
+    this.contextValue = type;
+
+    this.iconPath = new vscode.ThemeIcon(
+      type === 'function' ? 'symbol-function' : 'symbol-method',
+    );
   }
 }
 
@@ -19,21 +22,23 @@ class CallTreeProvider {
     this._onDidChangeTreeData = new vscode.EventEmitter();
     this.onDidChangeTreeData = this._onDidChangeTreeData.event;
     this.rootNodes = [];
+    this.treeDirection = 'top-down';
     this.debounceTimer = null;
-    this.debounceDelay = 300;
 
-    this.subscribeToEditorEvents();
+    vscode.window.onDidChangeActiveTextEditor(() => this.scheduleRefresh());
+    vscode.workspace.onDidChangeTextDocument(() => this.scheduleRefresh());
+
     this.refresh();
   }
 
-  subscribeToEditorEvents() {
-    vscode.window.onDidChangeActiveTextEditor(() => this.scheduleRefresh());
-    vscode.workspace.onDidChangeTextDocument(() => this.scheduleRefresh());
+  toggleDirection() {
+    this.treeDirection =
+      this.treeDirection === 'top-down' ? 'bottom-up' : 'top-down';
   }
 
   scheduleRefresh() {
     clearTimeout(this.debounceTimer);
-    this.debounceTimer = setTimeout(() => this.refresh(), this.debounceDelay);
+    this.debounceTimer = setTimeout(() => this.refresh(), 300);
   }
 
   refresh() {
@@ -45,14 +50,12 @@ class CallTreeProvider {
     }
 
     const code = editor.document.getText();
-    this.rootNodes = this.buildCallTree(code);
+    this.rootNodes = this.buildTree(code);
     this._onDidChangeTreeData.fire();
   }
 
-  buildCallTree(code) {
+  buildTree(code) {
     const functions = new Map();
-
-    // Extract function bodies and calls
     const functionRegex = /function\s+(\w+)\s*\(.*?\)\s*\{([\s\S]*?)\}/g;
     let match;
     while ((match = functionRegex.exec(code)) !== null) {
@@ -66,7 +69,6 @@ class CallTreeProvider {
       functions.set(name, { calls: new Set(calls), callers: new Set() });
     }
 
-    // Build reverse links: who calls each function
     for (const [caller, { calls }] of functions.entries()) {
       for (const callee of calls) {
         const calleeFn = functions.get(callee);
@@ -75,32 +77,28 @@ class CallTreeProvider {
     }
 
     const visited = new Set();
-    const buildNode = (name, useCallers) => {
+    const buildNode = (name, reverse) => {
       if (visited.has(name)) return null;
       visited.add(name);
-      const info = functions.get(name);
-      if (!info) return new TreeNode(name); // external
-
-      const neighbors = useCallers ? info.callers : info.calls;
-      const children = Array.from(neighbors)
-        .map((n) => buildNode(n, useCallers))
+      const data = functions.get(name);
+      if (!data) return new TreeNode(name); // external
+      const related = reverse ? data.callers : data.calls;
+      const children = Array.from(related)
+        .map((n) => buildNode(n, reverse))
         .filter(Boolean);
-
       return new TreeNode(name, children);
     };
 
-    const useCallers = TREE_DIRECTION === 'bottom-up';
+    const reverse = this.treeDirection === 'bottom-up';
 
-    // Roots: based on chosen direction
-    const rootNames = [...functions.entries()]
-      .filter(([_, data]) =>
-        useCallers
-          ? data.calls.size === 0
-          : ![...functions.values()].some((f) => f.calls.has(_)),
-      )
-      .map(([name]) => name);
+    const rootNames = [...functions.keys()].filter((name) => {
+      const data = functions.get(name);
+      return reverse
+        ? data.calls.size === 0
+        : ![...functions.values()].some((f) => f.calls.has(name));
+    });
 
-    return rootNames.map((name) => buildNode(name, useCallers)).filter(Boolean);
+    return rootNames.map((name) => buildNode(name, reverse)).filter(Boolean);
   }
 
   getTreeItem(element) {

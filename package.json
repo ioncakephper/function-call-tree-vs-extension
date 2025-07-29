@@ -11,6 +11,21 @@
   ],
   "main": "./extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "callTree.toggleDirection",
+        "title": "Toggle Call Tree Direction"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "callTree.toggleDirection",
+          "when": "view == callTree",
+          "group": "navigation"
+        }
+      ]
+    },
     "views": {
       "explorer": [
         {

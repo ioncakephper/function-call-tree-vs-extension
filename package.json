@@ -1,11 +1,7 @@
 {
   "name": "function-call-tree-vs-extension",
-<<<<<<< HEAD
   "displayName": "Function Call Tree Viewer",
   "version": "0.1.0",
-=======
-  "version": "1.0.0",
->>>>>>> 3cde1e538637b5b7163f6f1ef34f0e4e29599ee3
   "description": "A robust starter template for modern Node.js development, pre-configured with Jest for testing, ESLint for linting, and Prettier for code formatting.",
   "main": "./extension.js",
   "publisher": "you",

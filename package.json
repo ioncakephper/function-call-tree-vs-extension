@@ -1,47 +1,28 @@
 {
-  "name": "function-call-tree-vs-extension",
-  "displayName": "Function Call Tree Viewer",
-  "version": "0.1.0",
-  "description": "A robust starter template for modern Node.js development, pre-configured with Jest for testing, ESLint for linting, and Prettier for code formatting.",
-  "main": "./extension.js",
-  "publisher": "you",
+  "name": "function-call-tree-extension",
+  "displayName": "Function Call Tree",
+  "description": "Displays function call hierarchy in a tree view",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
   "activationEvents": [
-    "onCommand:callTreeViewer.refresh",
-    "onView:callTreeView"
+    "onView:functionCallTree"
   ],
+  "main": "./extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "callTreeViewer.refresh",
-        "title": "Refresh Call Tree"
-      },
-      {
-        "command": "callTreeViewer.toggleOrientation",
-        "title": "Toggle Top-Down/Bottom-Up"
-      },
-      {
-        "command": "callTreeViewer.toggleScope",
-        "title": "Toggle File/Workspace Scope"
-      }
-    ],
-    "viewsContainers": {
+    "views": {
       "explorer": [
         {
-          "id": "callTreeContainer",
-          "title": "Call Tree"
-        }
-      ]
-    },
-    "views": {
-      "callTreeContainer": [
-        {
-          "id": "callTreeView",
-          "name": "Function Call Tree"
+          "id": "callTree",
+          "name": "Call Tree",
+          "visibility": "visible"
         }
       ]
     }
   },
   "scripts": {
+    "vscode:prepublish": "npm run compile",
     "start": "node src/index.js",
     "test": "jest",
     "test:watch": "jest --watchAll",
@@ -120,10 +101,6 @@
   },
   "dependencies": {
     "@babel/parser": "^7.21.3"
-  },
-  "engines": {
-    "vscode": "^1.60.0",
-    "node": ">=18.0.0"
   },
   "overrides": {
     "undici": "5.28.4"

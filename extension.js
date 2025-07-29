@@ -1,11 +1,15 @@
+
 const vscode = require('vscode');
 const CallTreeProvider = require('./callTreeProvider');
 
 let provider;
 
 /**
+ * Activates the extension by initializing the CallTreeProvider with shared state,
+ * registering the call tree view, and setting up commands to refresh and toggle
+ * the orientation and scope of the call tree.
  *
- * @param context
+ * @param {vscode.ExtensionContext} context - The extension context provided by VS Code.
  */
 function activate(context) {
   // Shared state: orientation + scope
@@ -31,6 +35,7 @@ function activate(context) {
     }),
   );
 }
+
 
 /**
  *

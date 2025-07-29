@@ -1,8 +1,46 @@
 {
   "name": "function-call-tree-vs-extension",
+  "displayName": "Function Call Tree Viewer",
   "version": "0.1.0",
   "description": "A robust starter template for modern Node.js development, pre-configured with Jest for testing, ESLint for linting, and Prettier for code formatting.",
   "main": "./extension.js",
+  "publisher": "you",
+  "activationEvents": [
+    "onCommand:callTreeViewer.refresh",
+    "onView:callTreeView"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "callTreeViewer.refresh",
+        "title": "Refresh Call Tree"
+      },
+      {
+        "command": "callTreeViewer.toggleOrientation",
+        "title": "Toggle Top-Down/Bottom-Up"
+      },
+      {
+        "command": "callTreeViewer.toggleScope",
+        "title": "Toggle File/Workspace Scope"
+      }
+    ],
+    "viewsContainers": {
+      "explorer": [
+        {
+          "id": "callTreeContainer",
+          "title": "Call Tree"
+        }
+      ]
+    },
+    "views": {
+      "callTreeContainer": [
+        {
+          "id": "callTreeView",
+          "name": "Function Call Tree"
+        }
+      ]
+    }
+  },
   "scripts": {
     "start": "node src/index.js",
     "test": "jest",
@@ -80,7 +118,11 @@
     "jest": "^29.7.0",
     "prettier": "^3.2.5"
   },
+  "dependencies": {
+    "@babel/parser": "^7.21.3"
+  },
   "engines": {
+    "vscode": "^1.60.0",
     "node": ">=18.0.0"
   },
   "overrides": {

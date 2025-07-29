@@ -17,5 +17,5 @@ jobs:
         with:
           token: ${{ secrets.FUNCTION_TREE }} # Use a PAT to allow triggering other workflows
           release-type: node
-          package-name: js-starter
+          package-name: function-call-tree-vs-extension
           pull-request-title-pattern: "chore(release): ${version}"
